@@ -18,7 +18,7 @@ public class Main {
         if (Integer.parseInt(input.readLine()) == 1) {
             System.out.println("Enter Celsium degree:");
             System.out.println("It's " + fahrenheit.inFahrenheit(Double.parseDouble(input.readLine())) + " Fahrenheit");
-        } else if (Integer.parseInt(input.readLine()) == 1) {
+        } else if (Integer.parseInt(input.readLine()) == 2) {
             System.out.println("Enter Fahrenheit degree:");
             System.out.println("It's " + celsium.inCelsium(Double.parseDouble(input.readLine())) + " Celsium");
         } else {
