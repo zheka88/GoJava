@@ -1,25 +1,11 @@
 package goit.task.module3.third;
 
-
-public class Gitare extends Shop implements Instrument {
-
-    Gitare(int cost) {
-        this.cost = cost;
-    }
-
-
+public class Gitare implements Instrument {
+    public Gitare() {}
     @Override
-    public void makeMusic() {
-
-    }
-
+    public void makeMusic() {}
     @Override
-    public void enoughMusic() {
-
-    }
-
+    public void enoughMusic() {}
     @Override
-    void makeDemo() {
-
-    }
+    void makeDemo() {}
 }

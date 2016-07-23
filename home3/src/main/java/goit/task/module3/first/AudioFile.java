@@ -1,17 +1,13 @@
 package goit.task.module3.first;
 
-
 public class AudioFile extends File {
     private String id3Tag;
-
-    AudioFile( String name) {
+    public AudioFile( String name) {
         super(name);
-        super.size = 100;
-        id3Tag = "";
+        super.setSize(100);
+        id3Tag = "song";
     }
-
     void ffw(){}
     void rev(){}
     void rec(){}
-
 }

@@ -1,25 +1,11 @@
 package goit.task.module3.third;
 
-
-public class Forte extends Shop implements Instrument {
-
-    Forte(int cost) {
-        this.cost = cost;
-    }
-
-
+public class Forte implements Instrument {
+    public Forte() {}
     @Override
-    public void makeMusic() {
-
-    }
-
+    public void makeMusic() {}
     @Override
-    public void enoughMusic() {
-
-    }
-
+    public void enoughMusic() {}
     @Override
-    void makeDemo() {
-
-    }
+    void makeDemo() {}
 }
