@@ -1,6 +1,4 @@
 package goit.task.module6;
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,7 +7,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         Shop shop = new Shop();
-
         ArrayList<Instrument> instruments = new ArrayList<>();
         for (int i = 0; i < 2; i++) {
             instruments.add(new Piano());
@@ -24,8 +21,6 @@ public class Main {
         }
         shop.setInstruments(instruments);
         System.out.println(shop);
-
-
         Map<String, Integer> order = new HashMap<>();
         order.put("guitar", 7);
         order.put("trumpet", 2);
@@ -34,11 +29,10 @@ public class Main {
             List<Instrument> instrumentsToBeRemoved = prepareListInstrumentsToRemove(shop, order);
             removeInstrumentFromTheShop(shop, order);
             System.out.println("Order: " + instrumentsToBeRemoved);
-        } catch (Exception e) {
-            System.out.println("Exception happened: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("The shop has not such an instrument " + e.getMessage());
         }
         System.out.println(shop);
-
     }
 
     private static List<Instrument> prepareListInstrumentsToRemove(Shop shop, Map<String, Integer> order) {
