@@ -2,8 +2,8 @@ package goit.task.module5.task1;
 
 public class ArrayMinMax {
     int[] array;
-    int min;
-    int max;
+    private int min;
+    private int max;
 
     public ArrayMinMax(int[] array) {
         this.array = array;
@@ -16,7 +16,13 @@ public class ArrayMinMax {
                 max = array[i];
             }
         }
-        System.out.println("Min value = " + min);
-        System.out.println("Max value = " + max);
+    }
+
+    public int getMin() {
+        return min;
+    }
+
+    public int getMax() {
+        return max;
     }
 }

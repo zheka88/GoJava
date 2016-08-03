@@ -4,11 +4,11 @@ import goit.task.module5.task1.ArrayMinMax;
 import goit.task.module5.task2.ArraySort;
 
 public class ArrayUtils {
-    public static Object minMax(int[] array) {
+    public static ArrayMinMax minMax(int[] array) {
         return new ArrayMinMax(array);
     }
 
-    public static String sort(int[] array) {
+    public static int[] sort(int[] array) {
         return ArraySort.arraySort(array);
     }
 }

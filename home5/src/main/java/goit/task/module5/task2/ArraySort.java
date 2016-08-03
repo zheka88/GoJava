@@ -3,7 +3,7 @@ package goit.task.module5.task2;
 import java.util.Arrays;
 
 public class ArraySort {
-    public static String arraySort(int[] array) {
+    public static int[] arraySort(int[] array) {
         int[] arraySort = array.clone();
         for (int i = 0; i < arraySort.length; i++) {
             int min = arraySort[i];
@@ -20,6 +20,6 @@ public class ArraySort {
                 arraySort[min_i] = temp;
             }
         }
-        return Arrays.toString(arraySort);
+        return arraySort;
     }
 }
