@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>WEB-INF/jdbc.properties</value>
+        </property>
+    </bean>-->
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <!--property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>-->
+    </bean>
+
+    <bean id="employeeService" class="com.homework.service.EmployeeService">
+        <property name="employeeDAO" ref="employeeDAO"/>
+    </bean>
+
+    <bean id="employeeDAO" class="com.homework.dao.hibernate.EmployeeHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="positionService" class="com.homework.service.PositionService">
+        <property name="positionDAO" ref="positionDAO"/>
+    </bean>
+
+    <bean id="positionDAO" class="com.homework.dao.hibernate.PositionHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="dishService" class="com.homework.service.DishService">
+        <property name="dishDAO" ref="dishDAO"/>
+    </bean>
+
+    <bean id="dishDAO" class="com.homework.dao.hibernate.DishHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="MenuService" class="com.homework.service.MenuService">
+        <property name="MenuDAO" ref="MenuDAO"/>
+    </bean>
+
+    <bean id="MenuDAO" class="com.homework.dao.hibernate.MenuHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="ingredientService" class="com.homework.service.IngredientService">
+        <property name="ingredientDAO" ref="ingredientDAO"/>
+    </bean>
+
+    <bean id="ingredientDAO" class="com.homework.dao.hibernate.IngredientHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="orderService" class="com.homework.service.OrderService">
+        <property name="orderDAO" ref="orderDAO"/>
+    </bean>
+
+    <bean id="orderDAO" class="com.homework.dao.hibernate.OrderHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="kitchenJournalService" class="com.homework.service.KitchenJournalService">
+        <property name="kitchenJournalItemDAO" ref="kitchenJournalItemDAO"/>
+        <property name="ingredientService" ref="ingredientService"/>
+        <property name="dishService" ref="dishService"/>
+    </bean>
+
+    <bean id="kitchenJournalItemDAO" class="com.homework.dao.hibernate.KitchenJournalHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="imageService" class="com.homework.service.ImageService">
+        <property name="imageDAO" ref="imageDAO"/>
+    </bean>
+
+    <bean id="imageDAO" class="com.homework.dao.hibernate.ImageHibernateDAO">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>
